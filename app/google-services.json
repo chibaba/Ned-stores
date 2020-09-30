@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "3286630795",
+    "firebase_url": "https://nedtech-ecae7.firebaseio.com",
+    "project_id": "nedtech-ecae7",
+    "storage_bucket": "nedtech-ecae7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3286630795:android:531dcae6eb7662235b2f8e",
+        "android_client_info": {
+          "package_name": "com.example.nedtechnologies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3286630795-ls9piab9hun3f5j2b38n4gu3oohg40sd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC30CkdlMljThSae7_MAmjRI-ff6QvXmx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3286630795-ls9piab9hun3f5j2b38n4gu3oohg40sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
