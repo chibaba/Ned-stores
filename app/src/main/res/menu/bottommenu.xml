@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/all"
+        android:title="All"
+        android:icon="@drawable/all"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/catone"
+        android:title="Cat One"
+        android:icon="@drawable/catone"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/cattwo"
+        android:title="CAT Two"
+        android:icon="@drawable/cattwo"
+        app:showAsAction="always" />
+
+</menu>
