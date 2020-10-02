@@ -11,6 +11,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+
+    private AllFragment allFragment;
+    private CatOneFragment catOneFragment;
+    private CatTwoFragment catTwoFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
