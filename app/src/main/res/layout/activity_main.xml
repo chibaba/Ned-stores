@@ -21,6 +21,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/mainframe"
         android:layout_above="@+id/bottombar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
