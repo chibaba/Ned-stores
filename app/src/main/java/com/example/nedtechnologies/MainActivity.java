@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.catone:
                         bottomNavigationView.setItemBackgroundResource(R.color.catone);
                         return true;
+                    case R.id.cattwo:
+                        bottomNavigationView.setItemBackgroundResource(R.color.cattwo);
+                        return true;
+                    default:
+                        return false;
                 }
-                return false;
             }
         });
     }
