@@ -9,6 +9,9 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:id="@+id/bottombar"
+        app:menu="@menu/bottommenu"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
         android:background="@color/bottombar"
         android:layout_alignParentBottom="true"
         android:layout_height="56dp">
