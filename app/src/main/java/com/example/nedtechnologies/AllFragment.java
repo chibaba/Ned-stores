@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 public class AllFragment extends Fragment {
 
     private RecyclerView allRecycler;
+    private RecyclerView recyclerViewCatTwo;
 
 
 
@@ -26,13 +27,29 @@ public class AllFragment extends Fragment {
                              Bundle savedInstanceState) {
         View myview = inflater.inflate(R.layout.fragment_all, container, false);
 
-        allRecycler = myview.findViewById(R.id.recycler_all);
+        // Cat one Recycler ...
 
+        allRecycler = myview.findViewById(R.id.recycler_all);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         allRecycler.setHasFixedSize(true);
         allRecycler.setLayoutManager(layoutManager);
+
+
+        // cat two recycler
+
+        recyclerViewCatTwo = myview.findViewById(R.id.recycler_cattwo);
+
+        LinearLayoutManager layoutManagerCatTwo = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+
+        layoutManagerCatTwo.setReverseLayout(true);
+        layoutManagerCatTwo.setStackFromEnd(true);
+
+        recyclerViewCatTwo.setHasFixedSize(true);
+        recyclerViewCatTwo.setLayoutManager(layoutManagerCatTwo);
+
+
 
         return  myview;
     }
