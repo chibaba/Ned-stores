@@ -6,14 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".AllFragment">
     
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cat One:"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+    
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/recycler_all"
-        android:layout_height="match_parent" >
+        android:layout_height="300dp" >
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:text="Cat Two:"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+
+
+
 
 
 </LinearLayout>
