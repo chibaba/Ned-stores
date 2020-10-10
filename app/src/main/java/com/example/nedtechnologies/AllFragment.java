@@ -10,8 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,6 +78,27 @@ public class AllFragment extends Fragment {
             TextView mTitle = myView.findViewById(R.id.title);
             mTitle.setText(title);
 
+        }
+
+        public void setDescription (String description) {
+            TextView mDescription = myView.findViewById(R.id.description);
+            mDescription.setText(description);
+        }
+
+        public void setImage(final String image) {
+            final ImageView mImage = myView.findViewById(R.id.imageView);
+
+            Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).into(mImage, new Callback() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onError(Exception e) {
+                 Picasso.get().load(image).into(mImage);
+                }
+            });
         }
     }
 }
