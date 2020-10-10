@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.nedtechnologies.Model.Data;
 import com.firebase.ui.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -31,9 +32,9 @@ public class AllFragment extends Fragment {
 
        //Firebase
 
-      private DatabaseRefrence mCartOneDatabase;
+      private DatabaseReference mCartOneDatabase;
 
-      private DatabaseRefrence mCartTwoDatabase;
+      private DatabaseReference mCartTwoDatabase;
 
 
 
@@ -41,6 +42,8 @@ public class AllFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View myview = inflater.inflate(R.layout.fragment_all, container, false);
+
+
 
         // Cat one Recycler ...
 
