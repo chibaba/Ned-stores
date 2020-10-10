@@ -2,6 +2,7 @@ package com.example.nedtechnologies;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,5 +54,25 @@ public class AllFragment extends Fragment {
 
 
         return  myview;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+    public static class catoneViewHolder extends RecyclerView.ViewHolder{
+
+        View  myView;
+
+        public catoneViewHolder( View itemView) {
+            super(itemView);
+
+            myView=itemView;
+        }
+        public void setTitle(String title) {
+            TextView mTitle = myView.findViewById(R.id.title);
+            mTitle.setText(title);
+
+        }
     }
 }
