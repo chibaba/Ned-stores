@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.nedtechnologies.Model.Data;
 import com.firebase.ui.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -32,9 +33,9 @@ public class AllFragment extends Fragment {
 
        //Firebase
 
-      private DatabaseReference mCartOneDatabase;
+      private DatabaseReference mCatOneDatabase;
 
-      private DatabaseReference mCartTwoDatabase;
+      private DatabaseReference mCatTwoDatabase;
 
 
 
@@ -43,7 +44,9 @@ public class AllFragment extends Fragment {
                              Bundle savedInstanceState) {
         View myview = inflater.inflate(R.layout.fragment_all, container, false);
 
+          mCatOneDatabase = FirebaseDatabase.getInstance().getReference().child("CatOne Database");
 
+          mCatTwoDatabase = FirebaseDatabase.getInstance().getReference().child("CatTwo Database");
 
         // Cat one Recycler ...
 
@@ -76,16 +79,21 @@ public class AllFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<Data, catoneViewHolder>adapterone= new FirebaseRecyclerAdapter<Data, catoneViewHolder>(
+        FirebaseRecyclerAdapter<Data, catoneViewHolder>adapterone= new FirebaseRecyclerAdapter<Data, catoneViewHolder>
+           (
                 Data.class,
                 R.layout.item_data,
                 catoneViewHolder.class,
+                mCatOneDatabase
         ) {
             @Override
-            protected void populateViewHolder(catoneViewHolder catoneViewHolder, Data data, int i) {
-
+            protected void populateViewHolder(catoneViewHolder viewHolder, Data model, int i) {
+                viewHolder.setTitle(model.getTitle());
+                viewHolder.setDescription(model.getDescription());
+                viewHolder.setImage(model.getImage());
             }
         };
+        allRecycler.setAdapter(adapterone);
     }
     public static class catoneViewHolder extends RecyclerView.ViewHolder{
 
@@ -121,6 +129,17 @@ public class AllFragment extends Fragment {
                  Picasso.get().load(image).into(mImage);
                 }
             });
+        }
+    }
+
+    public static class catTwoViewHolder extends RecyclerView.ViewHolder{
+
+        View mView;
+
+        public catTwoViewHolder( View itemView) {
+            super(itemView);
+
+            mView=itemView;
         }
     }
 }
