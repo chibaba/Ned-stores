@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.nedtechnologies.Model.Data;
+import com.firebase.ui.FirebaseRecyclerAdapter;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -26,6 +28,12 @@ public class AllFragment extends Fragment {
 
     private RecyclerView allRecycler;
     private RecyclerView recyclerViewCatTwo;
+
+       //Firebase
+
+      private DatabaseRefrence mCartOneDatabase;
+
+      private DatabaseRefrence mCartTwoDatabase;
 
 
 
@@ -64,6 +72,17 @@ public class AllFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+
+        FirebaseRecyclerAdapter<Data, catoneViewHolder>adapterone= new FirebaseRecyclerAdapter<Data, catoneViewHolder>(
+                Data.class,
+                R.layout.item_data,
+                catoneViewHolder.class,
+        ) {
+            @Override
+            protected void populateViewHolder(catoneViewHolder catoneViewHolder, Data data, int i) {
+
+            }
+        };
     }
     public static class catoneViewHolder extends RecyclerView.ViewHolder{
 
